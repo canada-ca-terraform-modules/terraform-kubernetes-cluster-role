@@ -14,16 +14,17 @@ provider "kubernetes" {
 
 # A ClusterRole that does not get created because `create=false`
 module "no_create_cluster_role" {
-  source    = "../../"
-  name      = "no-create-cluster-role"
-  create    = false
+  source = "../../"
+  name   = "no-create-cluster-role"
+  create = false
   rules = [{
     api_groups = ["*"]
     verbs      = ["*"]
     resources  = ["*"]
   }]
   subjects = [{
-    kind = "User"
-    name = "Admin"
+    kind      = "User"
+    name      = "Admin"
+    namespace = null
   }]
 }

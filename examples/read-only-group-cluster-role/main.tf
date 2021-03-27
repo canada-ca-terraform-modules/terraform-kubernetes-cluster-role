@@ -14,8 +14,8 @@ provider "kubernetes" {
 
 # Create a read-only ClusterRole
 module "read_only_cluster_role" {
-  source    = "../../"
-  name      = "read-only-cluster-role"
+  source = "../../"
+  name   = "read-only-cluster-role"
   rules = [{
     api_groups = [""]
     verbs      = ["get", "list", "watch"]
@@ -31,7 +31,8 @@ module "read_only_cluster_role" {
     }
   ]
   subjects = [{
-    kind = "Group"
-    name = "Readers"
+    kind      = "ServiceAccount"
+    name      = "default"
+    namespace = "kube-system"
   }]
 }

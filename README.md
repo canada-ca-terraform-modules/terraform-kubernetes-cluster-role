@@ -31,7 +31,7 @@ No Modules.
 | create | Should the ClusterRole and ClusterRoleBinding objects be created? | `bool` | `true` | no |
 | name | Name of the Kubernetes ClusterRole to create | `string` | n/a | yes |
 | rules | The ClusterRole's rule, which should include lists of `api_groups`, `verbs` and `resources` | <pre>list(object({<br>    api_groups = list(string)<br>    verbs      = list(string)<br>    resources  = list(string)<br>  }))</pre> | n/a | yes |
-| subjects | The ClusterRoleBinding's subject, which should include lists of `kind` and `name` | <pre>list(object({<br>    kind = string<br>    name = string<br>  }))</pre> | n/a | yes |
+| subjects | The cluster role binding's subject.  To use the `default` namespace for a kind of `User` or `Group`, pass a `null` namespace. | <pre>list(object({<br>    kind      = string<br>    name      = string<br>    namespace = string<br>  }))</pre> | n/a | yes |
 
 # Outputs
 
