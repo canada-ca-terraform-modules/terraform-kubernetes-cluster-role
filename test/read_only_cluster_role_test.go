@@ -69,9 +69,10 @@ func TestReadOnlyGroupClusterRole(t *testing.T) {
 		assert.Equal(t, "rbac.authorization.k8s.io", roleBinding.RoleRef.APIGroup)
 
 		assert.Equal(t, 1, len(roleBinding.Subjects))
-		assert.Equal(t, "Group", roleBinding.Subjects[0].Kind)
-		assert.Equal(t, "Readers", roleBinding.Subjects[0].Name)
-		assert.Equal(t, "rbac.authorization.k8s.io", roleBinding.Subjects[0].APIGroup)
+		assert.Equal(t, "ServiceAccount", roleBinding.Subjects[0].Kind)
+		assert.Equal(t, "default", roleBinding.Subjects[0].Name)
+		assert.Equal(t, "kube-system", roleBinding.Subjects[0].Namespace)
+		assert.Equal(t, "", roleBinding.Subjects[0].APIGroup)
 	})
 
 }

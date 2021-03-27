@@ -12,11 +12,13 @@ variable "rules" {
   }))
 }
 
+# TODO: update namespace to optional() object type attribute with Terraform v0.15 release
 variable "subjects" {
-  description = "The ClusterRoleBinding's subject, which should include lists of `kind` and `name`"
+  description = "The cluster role binding's subject.  To use the `default` namespace for a kind of `User` or `Group`, pass a `null` namespace."
   type = list(object({
-    kind = string
-    name = string
+    kind      = string
+    name      = string
+    namespace = string
   }))
 }
 

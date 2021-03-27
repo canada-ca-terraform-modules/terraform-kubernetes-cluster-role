@@ -14,15 +14,16 @@ provider "kubernetes" {
 
 # Create an admin ClusterRole
 module "admin_cluster_role" {
-  source    = "../../"
-  name      = "admin-cluster-role"
+  source = "../../"
+  name   = "admin-cluster-role"
   rules = [{
     api_groups = ["*"]
     verbs      = ["*"]
     resources  = ["*"]
   }]
   subjects = [{
-    kind = "User"
-    name = "Admin"
+    kind      = "User"
+    name      = "Admin"
+    namespace = null
   }]
 }
