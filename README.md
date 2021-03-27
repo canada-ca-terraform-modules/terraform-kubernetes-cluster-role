@@ -1,4 +1,4 @@
-[![Build status](https://github.com/patheard/terraform-kubernetes-cluster-role/actions/workflows/terraform.yml/badge.svg)](https://github.com/patheard/terraform-kubernetes-cluster-role/actions/workflows/terraform.yml)
+[![Build status](https://github.com/canada-ca-terraform-modules/terraform-kubernetes-cluster-role/actions/workflows/terraform.yml/badge.svg)](https://github.com/canada-ca-terraform-modules/terraform-kubernetes-cluster-role/actions/workflows/terraform.yml)
 
 # Terraform Kubernetes ClusterRole
 Creates Kubernetes ClusterRole and ClusterRoleBinding objects in a namespace.  Supports `User` and `Group` subjects for the RoleBinding.
